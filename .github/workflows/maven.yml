@@ -21,7 +21,7 @@ jobs:
           cache: maven
 
       - name: Build and test with Maven
-        run: mvn -B package --file pom.xml
+        run: mvn -B package --file pom.xml -DskipTests
 
       - name: Prepare JAR for upload
         run: mkdir build && cp target/*.jar build

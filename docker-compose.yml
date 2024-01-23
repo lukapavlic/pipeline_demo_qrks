@@ -2,7 +2,7 @@ version: '3.1'
 
 services:
 
-    spring_db:
+    qrks_db:
         image: postgres:16.1
         environment:
             POSTGRES_USER: postgres
@@ -28,7 +28,7 @@ services:
             - QUARKUS_DATASOURCE_USERNAME=postgres
             - QUARKUS_DATASOURCE_PASSWORD=postgres
         depends_on:
-            - spring_db
+            - qrks_db
 
 volumes:
     postgres:

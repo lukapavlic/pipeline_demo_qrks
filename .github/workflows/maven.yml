@@ -48,6 +48,10 @@ jobs:
         id: date
         run: echo "::set-output name=date::$(date +%Y%m%d-%H%M%S)"
 
+      - run: ls -l
+
+      - run: ls target -l
+
       - name: Docker build
         run: docker build -t iideveloper21/measurements-qrks:$TAG_NAME -f src/main/docker/Dockerfile.jvm .
         env:

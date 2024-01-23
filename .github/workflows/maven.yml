@@ -24,7 +24,7 @@ jobs:
         run: mvn -B package --file pom.xml -DskipTests
 
       - name: Prepare JAR for upload
-        run: mkdir build && cp target/*.jar build
+        run: mkdir build && cp target/*.jar build && cp -r target/quarkus-app/lib/ /build/lib/ && cp -r target/quarkus-app/app/ /build/app/ && cp -r target/quarkus-app/quarkus/ /build/quarkus/
 
       - name: Upload resulting JAR
         uses: actions/upload-artifact@v4

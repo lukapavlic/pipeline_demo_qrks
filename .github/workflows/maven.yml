@@ -49,12 +49,12 @@ jobs:
         run: echo "::set-output name=date::$(date +%Y%m%d-%H%M%S)"
 
       - name: Docker build
-        run: docker build . -t iideveloper21/measurements-spring:$TAG_NAME
+        run: docker build . -t iideveloper21/measurements-qrks:$TAG_NAME
         env:
           TAG_NAME: CD-${{ steps.date.outputs.date }}
 
       - name: Retag to latest
-        run: docker tag iideveloper21/measurements-spring:$TAG_NAME iideveloper21/measurements-spring:latest
+        run: docker tag iideveloper21/measurements-qrks:$TAG_NAME iideveloper21/measurements-qrks:latest
         env:
           TAG_NAME: CD-${{ steps.date.outputs.date }}
 
@@ -65,7 +65,7 @@ jobs:
           password: ${{ secrets.DOCKER_HUB_PASS }}
 
       - name: Docker push
-        run: docker push iideveloper21/measurements-spring:$TAG_NAME && docker push iideveloper21/measurements-spring:latest
+        run: docker push iideveloper21/measurements-qrks:$TAG_NAME && docker push iideveloper21/measurements-qrks:latest
         env:
           TAG_NAME: CD-${{ steps.date.outputs.date }}
 

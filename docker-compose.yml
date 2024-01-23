@@ -16,6 +16,7 @@ services:
         restart: unless-stopped
 
     mikrostoritev:
+#        image: iideveloper21/measurements-qrks
         build:
             context: .
             dockerfile: src/main/docker/Dockerfile.jvm

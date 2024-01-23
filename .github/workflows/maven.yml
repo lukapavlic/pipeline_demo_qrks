@@ -23,7 +23,7 @@ jobs:
       - name: Build and test with Maven
         run: mvn -B package --file pom.xml -DskipTests
 
-      - name: Upload resulting JAR
+      - name: Upload resulting Build package
         uses: actions/upload-artifact@v4
         with:
           name: Package
@@ -44,10 +44,6 @@ jobs:
       - name: Generate image tag
         id: date
         run: echo "::set-output name=date::$(date +%Y%m%d-%H%M%S)"
-
-      - run: ls -l
-
-      - run: ls target -l
 
       - name: Docker build
         run: docker build -t iideveloper21/measurements-qrks:$TAG_NAME -f src/main/docker/Dockerfile.jvm .

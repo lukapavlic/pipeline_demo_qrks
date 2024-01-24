@@ -1,13 +1,11 @@
 package si.um.feri.measurements;
 
 import io.quarkus.test.junit.QuarkusTest;
-import io.smallrye.mutiny.Uni;
 import jakarta.inject.Inject;
 import org.junit.jupiter.api.BeforeEach;
 import si.um.feri.measurements.dao.MeasurementRepository;
 import si.um.feri.measurements.dao.ProductRepository;
 import si.um.feri.measurements.vao.Product;
-import java.time.Duration;
 
 @QuarkusTest
 public class ProductRepositoryTest {

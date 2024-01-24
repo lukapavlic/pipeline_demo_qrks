@@ -44,7 +44,7 @@ jobs:
           name: Package
           path: target
 
-  deploy-docker-image:
+  deliver-docker-image:
     runs-on: ubuntu-latest
     needs: build-test-package
 
@@ -83,7 +83,7 @@ jobs:
 
   deliver-on-azure:
     runs-on: ubuntu-latest
-    needs: deploy-docker-image
+    needs: deliver-docker-image
 
     steps:
       - name: Deploy to MS Azure

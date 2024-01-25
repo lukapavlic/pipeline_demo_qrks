@@ -24,7 +24,7 @@ services:
         ports:
             - 8280:8280
         environment:
-            - QUARKUS_DATASOURCE_REACTIVE_URL=vertx-reactive:postgresql://spring_db:5432/measdb
+            - QUARKUS_DATASOURCE_REACTIVE_URL=vertx-reactive:postgresql://qrks_db:5432/measdb
             - QUARKUS_DATASOURCE_USERNAME=postgres
             - QUARKUS_DATASOURCE_PASSWORD=postgres
         depends_on:
